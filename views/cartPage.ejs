@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>IT Academy</title>
+        <link rel="stylesheet" href="/css/cart.css" />
+    </head>
+    <body>
+        <h1>IT Academy</h1>
+        <div class="wrapper">
+            <h2 class="title">Cart</h2>
+            <div>
+                <div class="buttons">
+                    <% if (cart.length > 0) { %>
+                    <a href="/login?source=registration" style="border-radius: 25px">
+                        <button class="button">Confirm registration</button>
+                    </a>
+                    <% } %>
+                    <a href="/" style="border-radius: 25px">
+                        <button class="button">Back to courses</button>
+                    </a>
+                </div>
+                <% if (cart.length > 0) { %>
+                <table>
+                    <thead>
+                        <tr>
+                            <% Object.keys(cart[0]).forEach((column) => { %>
+                            <th><%= column %></th>
+                            <% }) %>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% cart.forEach((course, i) => { %>
+                        <tr>
+                            <!-- Show each column data for a given row/course -->
+                            <% Object.keys(course).forEach((column) => { %>
+                            <td><%= course[column] %></td>
+                            <% }) %>
+                            <td><a href="/remove/<%= i %>">Delete</a></td>
+                        </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+                <% } else { %>
+                <div class="noCoursesText">
+                    <p>Your cart is empty.</p>
+                    <p>
+                        Check the list of all available courses to find<br />
+                        the one that <b>fits you best</b> !
+                    </p>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800;900&display=swap");
+* {
+    font-family: "Montserrat", sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+h1 {
+    font-size: 4em;
+    font-weight: 900;
+    color: rgb(50, 50, 50);
+}
+.wrapper {
+    width: 50%;
+    min-width: 500px;
+    margin-top: 30px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+.wrapper .title {
+    font-size: 35px;
+    font-weight: 700;
+    color: rgb(50, 50, 50);
+    line-height: 100px;
+    margin: 0 20px;
+    user-select: none;
+}
+.wrapper > div {
+    padding: 0px 40px 40px 40px;
+}
+.wrapper .buttons {
+    display: flex;
+}
+.wrapper .buttons .button {
+    height: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 10px 0 0;
+    padding: 0 15px;
+    cursor: pointer;
+    border: 2px solid #d43100;
+    background: #ffe4e4;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+.wrapper .buttons .button:hover {
+    color: #fff;
+    border-color: rgb(50, 50, 50);
+    background: rgb(50, 50, 50);
+}
+
+.wrapper table {
+    width: 100%;
+    min-width: 300px;
+    margin: 20px auto 0 auto;
+    border-collapse: collapse;
+    border-bottom: 2px solid #aa2b00;
+}
+thead tr {
+    background: #aa2b00;
+    color: #ffffff;
+    text-align: left;
+}
+tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+th:first-of-type {
+    border-top-left-radius: 10px;
+}
+th:last-of-type {
+    border-top-right-radius: 10px;
+}
+th,
+td {
+    padding: 10px 10px;
+}
+tr td:first-of-type,
+tr th:first-of-type {
+    text-align: center;
+}
+.wrapper .noCoursesText {
+    margin: 30px 0 0 0;
+    font-size: 18px;
+    text-align: center;
+}
