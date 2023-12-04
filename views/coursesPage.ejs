@@ -25,6 +25,7 @@
                 <table>
                     <thead>
                         <tr>
+                            <!-- Show the header based on first row keys -->
                             <% Object.keys(courses[0]).forEach((column) => { %>
                             <th><%= column %></th>
                             <% }) %>

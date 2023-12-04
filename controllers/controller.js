@@ -8,10 +8,13 @@ let coursesData = [
 
 exports.coursesPage = async (req, res) => {
     try {
+        // If the user is not connected
         if (req.session.username == undefined) {
             //TODO Select courses from database
+            // Render the courses page with the login button
             res.render("coursesPage.ejs", { userConnected: 0, courses: coursesData, cart: cart.getCourses() });
         } else {
+            // Render the courses page without the login button if connected
             res.render("coursesPage.ejs", { userConnected: 1, courses: coursesData, cart: cart.getCourses() });
         }
     } catch (error) {
@@ -29,14 +32,17 @@ exports.cartPage = async (req, res) => {
 
 exports.loginPage = async (req, res) => {
     try {
+        // If 'Log in' button is clicked or 'Confirm registration' is clicked while not being connected
         if (req.session.username == undefined) {
             source = "";
+            // If the user come from the 'Confirm registration' button
             if (req.query.source != undefined) {
                 source = "?source=" + req.query.source;
                 console.log(source);
             }
             res.render("loginPage.ejs", { source: source });
         } else {
+            // If the 'Confirm registration' is clicked while being connected
             let message = `You are registered for :`;
             cart.getCourses().forEach((course) => {
                 message += `<br/>-- ` + course.Name;
@@ -54,6 +60,7 @@ exports.login = async (req, res) => {
     try {
         req.session.username = req.body.username;
         console.log(req.session);
+        // If comes from 'Confirm registration', render directly the confirmation page
         if (req.query.source != undefined) {
             let message = `You are registered for :`;
             cart.getCourses().forEach((course) => {
@@ -63,6 +70,7 @@ exports.login = async (req, res) => {
             res.send(message);
             cart.clear();
         } else {
+            // If comes from 'Log in', redirect to the list of all courses
             res.redirect("/");
         }
     } catch (error) {
