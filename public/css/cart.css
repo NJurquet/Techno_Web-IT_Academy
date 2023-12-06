@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #fafafa;
 }
 h1 {
     font-size: 4em;
@@ -21,24 +22,37 @@ h1 {
     box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 .wrapper .title {
+    position: relative;
     font-size: 35px;
     font-weight: 700;
     color: rgb(50, 50, 50);
     line-height: 100px;
-    margin: 0 20px;
+    margin: 0 30px;
     user-select: none;
+    z-index: 1;
+}
+.wrapper .title::before {
+    position: absolute;
+    content: "";
+    width: 130px;
+    height: 10px;
+    bottom: 33px;
+    border-radius: 3px;
+    background: rgba(97, 241, 109, 0.5);
+    transform: translateX(-5%) skew(-15deg);
+    z-index: -1;
 }
 .wrapper > div {
     padding: 0px 40px 40px 40px;
 }
 .wrapper .buttons {
     display: flex;
+    gap: 10px;
 }
 .wrapper .buttons .button {
     height: 40px;
     font-size: 18px;
     font-weight: 500;
-    margin: 0 10px 0 0;
     padding: 0 15px;
     cursor: pointer;
     border: 2px solid #009144;
@@ -69,6 +83,17 @@ tbody tr {
 }
 tbody tr:nth-of-type(even) {
     background-color: #f3f3f3;
+}
+tbody tr .actionButton {
+    color: red;
+    font-weight: 500;
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+tbody tr .actionButton:hover {
+    background: #ffe4e4;
 }
 th:first-of-type {
     border-top-left-radius: 10px;

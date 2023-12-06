@@ -12,14 +12,14 @@
             <h2 class="title">Cart</h2>
             <div>
                 <div class="buttons">
+                    <a href="/" style="border-radius: 25px">
+                        <button class="button">Back to courses</button>
+                    </a>
                     <% if (cart.length > 0) { %>
                     <a href="/login?source=registration" style="border-radius: 25px">
                         <button class="button">Confirm registration</button>
                     </a>
                     <% } %>
-                    <a href="/" style="border-radius: 25px">
-                        <button class="button">Back to courses</button>
-                    </a>
                 </div>
                 <% if (cart.length > 0) { %>
                 <table>
@@ -27,7 +27,8 @@
                         <tr>
                             <!-- Show each column data for a given row/course -->
                             <% Object.keys(cart[0]).forEach((column) => { %>
-                            <th><%= column %></th>
+                            <!-- Set the first letter to capital letter -->
+                            <th><%= column.charAt(0).toUpperCase() + column.slice(1) %></th>
                             <% }) %>
                             <th></th>
                         </tr>
@@ -39,7 +40,7 @@
                             <% Object.keys(course).forEach((column) => { %>
                             <td><%= course[column] %></td>
                             <% }) %>
-                            <td><a href="/remove/<%= i %>">Delete</a></td>
+                            <td><a href="/remove/<%= i %>" class="actionButton">Delete</a></td>
                         </tr>
                         <% }) %>
                     </tbody>

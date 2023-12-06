@@ -27,7 +27,8 @@
                         <tr>
                             <!-- Show the header based on first row keys -->
                             <% Object.keys(courses[0]).forEach((column) => { %>
-                            <th><%= column %></th>
+                            <!-- Set the first letter to capital letter -->
+                            <th><%= column.charAt(0).toUpperCase() + column.slice(1) %></th>
                             <% }) %>
                             <th></th>
                         </tr>
@@ -41,7 +42,7 @@
                             <% }) %>
                             <td>
                                 <% if (!cart.includes(course)) { %>
-                                <a href="/add/<%= course.Id %>">Add to cart</a>
+                                <a href="/add/<%= course.id %>" class="actionButton">Add to cart</a>
                                 <% } %>
                             </td>
                         </tr>
