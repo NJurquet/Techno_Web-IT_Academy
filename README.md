@@ -4,22 +4,26 @@
 
 ## Concept
 
-Website following _MVC design pattern_ allowing subscriptions for IT courses linked to a database.
-The user is able to consult current courses and sign up for them.
+Website following **MVC design pattern** allowing subscriptions for IT courses linked to a database.
+Users are able to consult current courses and sign up for them.
 
-Users should be logged in with a username to sign up for a course. He can be part of multiple courses by selecting them, so they appear in the cart. Once the user has chosen the courses he wants to follow, he can confirm his inscriptions from the cart.
+Users should be logged in with a username to sign up for a course. By selecting them, they can be part of multiple courses, so they appear in the cart. Once users have chosen the courses they want to follow, they can confirm their inscriptions from the cart.
 
 Data concerning the different courses are stored in a database and can't be accessed within the website.
 
-![Page displaying your cart with courses you want to sign up to.](public/images/cart.png)
+<p align="center">
+<img src="public/images/cart.png" alt="Page displaying your cart with courses you want to sign up for." width="70%">
 
-![Page displaying your empty cart.](public/images/empty_cart.png)
+<img src="public/images/empty_cart.png" alt="Page displaying your empty cart." width="70%">
 
-![Login page](public/images/login.png)
+<img src="public/images/login.png" alt="Login page" height="500">
+</p>
 
 ## Installation
 
-To install the Academy on your own server, please make sure **NodeJS** is installed and clone the **GitHub repository** :
+> :bulb: **Note:** We assume a MySQL server is installed and ready to use.
+
+To install the Academy on your server, please make sure **NodeJS** is installed and clone the **GitHub repository** :
 
 ```shell
 npm install node
