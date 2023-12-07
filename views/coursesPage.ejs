@@ -41,7 +41,7 @@
                             <td><%= course[column] %></td>
                             <% }) %>
                             <td>
-                                <% if (!cart.includes(course)) { %>
+                                <% if (!cart.isInCart(course)) { %>
                                 <a href="/add/<%= course.id %>" class="actionButton">Add to cart</a>
                                 <% } %>
                             </td>

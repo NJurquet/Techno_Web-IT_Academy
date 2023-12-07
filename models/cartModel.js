@@ -15,6 +15,11 @@ class Cart {
         return this.coursesList;
     }
 
+    isInCart(course) {
+        // return this.coursesList.map(c => c.id).includes(course.id);
+        return this.coursesList.some((c) => c.id == course.id);
+    }
+
     clear() {
         this.coursesList = [];
     }
